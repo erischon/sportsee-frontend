@@ -15,14 +15,15 @@ function App() {
   // }, []);
 
   const userData = Service();
-  console.log(Object.userData.id);
+
+  console.log("======USERDATA", userData);
 
   return (
     <div className="App">
       <h1>SportSee</h1>
 
       {/* {userData && userData.map((user) => <h1>user.id</h1>)} */}
-      {userData.id}
+      {/* {userData.id} */}
     </div>
   );
 }
