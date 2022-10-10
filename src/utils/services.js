@@ -4,9 +4,11 @@ import axios from "axios";
 const baseUrl = "http://localhost:3000/user/12";
 
 const Service = async () => {
-  const { data } = await axios.get(baseUrl);
-
-  return data.data;
+  try {
+    const { data } = await axios.get(baseUrl);
+    console.log("======DATA", data.data);
+    return data.data;
+  } catch {}
 };
 
 export default Service;
