@@ -8,7 +8,7 @@ const useFetch = (url) => {
     try {
       axios.get(url).then((res) => setUserData(res.data));
     } catch (err) {
-      console.log("Error : ", err);
+      console.log("There is an error : ", err);
     }
   }, [url]);
 
