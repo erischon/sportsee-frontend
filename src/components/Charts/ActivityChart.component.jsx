@@ -78,11 +78,12 @@ export default class ActivityChart extends PureComponent {
         <p>Click each rectangle </p>
         <ResponsiveContainer width="100%" height={100}>
           <BarChart width={150} height={40} data={data}>
+            <Legend />
             <Bar dataKey="uv" onClick={this.handleClick}>
               {data.map((entry, index) => (
                 <Cell
                   cursor="pointer"
-                  fill={index === activeIndex ? "#82ca9d" : "#8884d8"}
+                  fill={index === activeIndex ? "#282D30" : "#282D30"}
                   key={`cell-${index}`}
                 />
               ))}
@@ -91,7 +92,7 @@ export default class ActivityChart extends PureComponent {
               {data.map((entry, index) => (
                 <Cell
                   cursor="pointer"
-                  fill={index === activeIndex ? "#82ca9d" : "#8884d8"}
+                  fill={index === activeIndex ? "#E60000" : "#E60000"}
                   key={`cell-${index}`}
                 />
               ))}
