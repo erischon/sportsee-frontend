@@ -1,35 +1,22 @@
-import useFetch from "./hooks/useFetch";
-import serviceMock, {
-  getUserMainData,
-  getUserActivity,
-  getUserAverageSessions,
-  getUserPerformance,
-} from "./utils/services";
+import { Routes, Route } from "react-router-dom";
 
-// const API_URL = "http://localhost:3000/user/12";
-// const API_URL = "http://localhost:3001/data/12/main.json";
-const API_URL = `${process.env.REACT_APP_DEV_URL}/data/api.mock.json`;
+import Layout from "./components/Layout/Layout.component";
+import Dashboard from "./pages/Dashboard.page";
+import NotFound from "./pages/NotFound.page";
 
 function App() {
-  // const userData = useFetch(API_URL);
-
-  const userData = getUserMainData(12);
-  const userActivity = getUserActivity(12);
-  const userSessions = getUserAverageSessions(12);
-  const userPerformance = getUserPerformance(12);
-
-  console.log("======USERDATA", userData);
-  console.log("======ACTIVITY", userActivity);
-  console.log("======SESSIONS", userSessions);
-  console.log("======PERFORMANCE", userPerformance);
-
   return (
-    <div className="App">
-      <h1>SportSee</h1>
+    <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<Layout />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
 
-      {/* {userData && userData.map((user) => <h1>user.id</h1>)} */}
-      {userData?.id}
-    </div>
+      {/* Other Routes */}
+      <Route path="*">
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
