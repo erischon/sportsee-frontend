@@ -1,4 +1,29 @@
-.recharts-layer.recharts-bar-rectangle {
-  border-radius: 20px;
-  background-color: aqua;
+.activity-chart {
+  width: 835px;
+  height: 320px;
+
+  font-size: 14px;
+
+  .recharts-rectangle {
+    width: 10px;
+    border-radius: 20px;
+  }
+}
+
+.recharts-wrapper {
+  .recharts-surface {
+    .recharts-layer.recharts-bar {
+      .recharts-layer.recharts-bar-rectangles {
+        .recharts-layer {
+          .recharts-layer.recharts-bar-rectangle {
+            .recharts-rectangle {
+              width: 10px;
+              background-color: aqua;
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
