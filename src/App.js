@@ -6,12 +6,12 @@ import NotFound from "./pages/NotFound.page";
 import Service from "./utils/service2";
 
 function App() {
-  let data = null;
+  // let data = null;
 
-  (async () => {
-    data = await Service();
-  })();
-  console.log("======APP", data);
+  // (async () => {
+  //   data = await Service();
+  // })();
+  // console.log("======APP", data);
 
   return (
     <Routes>
