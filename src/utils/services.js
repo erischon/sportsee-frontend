@@ -25,8 +25,8 @@ const getUserMainData = (userId) => {
 
 /**
  *
- * @param {*} userId
- * @returns
+ * @param {number} userId
+ * @returns {Object}
  */
 const getUserActivity = (userId) => {
   try {

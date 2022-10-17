@@ -10,18 +10,38 @@
   }
 }
 
-.recharts-wrapper {
-  .recharts-surface {
-    .recharts-layer.recharts-bar {
-      .recharts-layer.recharts-bar-rectangles {
-        .recharts-layer {
-          .recharts-layer.recharts-bar-rectangle {
-            .recharts-rectangle {
-              width: 10px;
-              background-color: aqua;
-              border-radius: 20px;
-            }
-          }
+.custom-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #e60000;
+  color: white;
+  font-size: 7px;
+  font-weight: 500;
+
+  p {
+    padding: 10px;
+  }
+}
+
+.custom-legend {
+  display: flex;
+  justify-content: flex-end;
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    // list-style: none;
+
+    li {
+      margin-left: 1rem;
+
+      &.calories {
+        color: #e60000;
+
+        span {
+          color: black;
         }
       }
     }

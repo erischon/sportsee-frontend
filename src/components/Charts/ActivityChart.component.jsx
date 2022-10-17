@@ -6,6 +6,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 import { getUserActivity } from "../../utils/services";
@@ -14,10 +15,36 @@ const ActivityChart = () => {
   const userActivity = getUserActivity(12);
   const sessions = userActivity.sessions;
 
-  const getDay = (date) => {
-    const dateObj = new Date(date);
+  const tooltipContentStyle = {
+    border: "none",
+  };
 
-    return dateObj.getUTCDate();
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p className="kilogram">{`${payload[0].value}kg`}</p>
+          <p className="calories">{`${payload[1].value}Kcal`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  const CustomLegend = ({ payload }) => {
+    return (
+      <div className="custom-legend">
+        <ul>
+          <li className="kilogram">
+            <span>{`${payload[0].value}`}</span>
+          </li>
+          <li className="calories">
+            <span>{`${payload[1].value}`}</span>
+          </li>
+        </ul>
+      </div>
+    );
   };
 
   return (
@@ -31,15 +58,21 @@ const ActivityChart = () => {
           barGap={8}
           barSize={7}
         >
+          <CartesianGrid strokeDasharray="3" vertical={false} />
           <XAxis dataKey="day" tickLine={false} />
           <YAxis orientation="right" tickLine={false} axisLine={false} />
-          <Tooltip />
+          <Tooltip
+            contentStyle={tooltipContentStyle}
+            offset={60}
+            content={CustomTooltip}
+          />
           <Legend
             verticalAlign="top"
             align="right"
             height={72}
             iconType="circle"
             iconSize="8"
+            content={CustomLegend}
           />
           <Bar
             dataKey="kilogram"
