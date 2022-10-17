@@ -1,0 +1,52 @@
+.average-sessions-chart {
+  width: 258px;
+  height: 263px;
+
+  font-size: 12px;
+  background-color: #ff0000;
+  color: white;
+  border-radius: 5px;
+
+  .recharts-rectangle {
+    width: 10px;
+    border-radius: 20px;
+  }
+}
+
+.custom-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #e60000;
+  color: white;
+  font-size: 7px;
+  font-weight: 500;
+
+  p {
+    padding: 10px;
+  }
+}
+
+.custom-legend {
+  display: flex;
+  justify-content: flex-end;
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    // list-style: none;
+
+    li {
+      margin-left: 1rem;
+
+      &.calories {
+        color: #e60000;
+
+        span {
+          color: black;
+        }
+      }
+    }
+  }
+}
