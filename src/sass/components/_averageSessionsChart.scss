@@ -7,11 +7,6 @@
   color: white;
   border-radius: 5px;
 
-  .recharts-rectangle {
-    width: 10px;
-    border-radius: 20px;
-  }
-
   .custom-tooltip {
     display: flex;
     flex-direction: column;
@@ -21,8 +16,6 @@
     color: black;
     font-size: 8px;
     font-weight: 500;
-
-    border: 0 solid white;
 
     p {
       padding: 12px;
