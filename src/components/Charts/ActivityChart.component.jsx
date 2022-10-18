@@ -15,10 +15,6 @@ const ActivityChart = () => {
   const userActivity = getUserActivity(12);
   const sessions = userActivity.sessions;
 
-  const tooltipContentStyle = {
-    border: "none",
-  };
-
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -62,7 +58,7 @@ const ActivityChart = () => {
           <XAxis dataKey="day" tickLine={false} />
           <YAxis orientation="right" tickLine={false} axisLine={false} />
           <Tooltip
-            contentStyle={tooltipContentStyle}
+            wrapperStyle={{ outline: "none" }}
             offset={60}
             content={CustomTooltip}
           />
