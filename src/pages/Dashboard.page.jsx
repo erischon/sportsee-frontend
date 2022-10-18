@@ -4,7 +4,7 @@ import AverageSessionsChart from "../components/Charts/AverageSessionsChart.comp
 const Dashboard = () => {
   return (
     <main>
-      {/* <ActivityChart /> */}
+      <ActivityChart />
       <AverageSessionsChart />
     </main>
   );
