@@ -2,7 +2,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   Radar,
   ResponsiveContainer,
 } from "recharts";
@@ -16,11 +15,7 @@ const ActivityTypeChart = () => {
   return (
     <div className="activity-type-chart">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart
-          outerRadius={78}
-          //   margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-          data={performance}
-        >
+        <RadarChart outerRadius={78} data={performance}>
           <PolarGrid />
           <PolarAngleAxis
             dataKey="kind"
