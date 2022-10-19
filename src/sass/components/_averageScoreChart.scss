@@ -1,4 +1,5 @@
 .average-score-chart {
+  position: relative;
   width: 258px;
   height: 263px;
 
@@ -9,6 +10,26 @@
 }
 
 .radial-chart__label {
-  background-color: aqua;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 40%;
+  left: 32%;
+
+  width: 95px;
+
+  h2 {
+    margin: auto;
+    font-size: 26px;
+    color: black;
+  }
+
+  span {
+    text-align: center;
+    font-size: 15px;
+    color: #74798c;
+  }
 }

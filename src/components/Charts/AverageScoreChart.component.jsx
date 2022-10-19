@@ -13,12 +13,16 @@ const AverageScoreChart = () => {
 
   return (
     <div className="average-score-chart">
+      <article className="radial-chart__label">
+        <h2>{`${averageScore[0].score}%`}</h2>
+        <span>de votre objectif</span>
+      </article>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           width={258}
           height={263}
-          innerRadius="80%"
-          outerRadius="80%"
+          innerRadius="70%"
+          outerRadius="70%"
           data={averageScore}
           barSize={10}
           startAngle={90}
@@ -29,7 +33,7 @@ const AverageScoreChart = () => {
             clockWise={false}
             fill="#FF0000"
             dataKey="score"
-            radius={[3, 3, 3, 3]}
+            radius={[6, 3, 3, 3]}
           />
           <PolarAngleAxis
             type="number"
@@ -37,14 +41,6 @@ const AverageScoreChart = () => {
             angleAxisId={0}
             tick={false}
           />
-          <text
-            className="radial-chart__label"
-            x={258 / 2}
-            y={263 / 2}
-            textAnchor="middle"
-          >
-            {`${averageScore[0].score}% de votre objectif`}
-          </text>
         </RadialBarChart>
       </ResponsiveContainer>
     </div>

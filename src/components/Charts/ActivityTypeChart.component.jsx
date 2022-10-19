@@ -29,13 +29,6 @@ const ActivityTypeChart = () => {
             fill="#FF0101B2"
             fillOpacity={0.7}
           />
-          <Radar
-            name="Lily"
-            dataKey="B"
-            stroke="#82ca9d"
-            fill="#82ca9d"
-            fillOpacity={0.6}
-          />
         </RadarChart>
       </ResponsiveContainer>
     </div>
