@@ -8,8 +8,8 @@ import {
 
 import { getUserPerformance } from "../../utils/services";
 
-const ActivityTypeChart = () => {
-  const activityType = getUserPerformance(12);
+const ActivityTypeChart = ({ userId }) => {
+  const activityType = getUserPerformance(userId);
   const performance = activityType.data;
 
   return (

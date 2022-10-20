@@ -11,8 +11,8 @@ import {
 
 import { getUserActivity } from "../../utils/services";
 
-const ActivityChart = () => {
-  const userActivity = getUserActivity(12);
+const ActivityChart = ({ userId }) => {
+  const userActivity = getUserActivity(userId);
   const sessions = userActivity.sessions;
 
   const CustomTooltip = ({ active, payload }) => {

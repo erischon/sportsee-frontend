@@ -2,8 +2,8 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 import { getUserAverageSessions } from "../../utils/services";
 
-const AverageSessionsChart = () => {
-  const userAverageSessions = getUserAverageSessions(12);
+const AverageSessionsChart = ({ userId }) => {
+  const userAverageSessions = getUserAverageSessions(userId);
   const sessions = userAverageSessions.sessions;
 
   const CustomTooltip = ({ active, payload }) => {

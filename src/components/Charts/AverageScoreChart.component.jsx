@@ -7,8 +7,8 @@ import {
 
 import { getUserMainData } from "../../utils/services";
 
-const AverageScoreChart = () => {
-  const mainUserData = getUserMainData(18);
+const AverageScoreChart = ({ userId }) => {
+  const mainUserData = getUserMainData(userId);
   const averageScore = [{ score: mainUserData.todayScore * 100 }];
 
   return (

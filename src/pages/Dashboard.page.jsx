@@ -5,13 +5,15 @@ import AverageSessionsChart from "../components/Charts/AverageSessionsChart.comp
 import KeyInfos from "../components/KeyInfos/KeyInfos.component";
 
 const Dashboard = () => {
+  const userId = 18;
+
   return (
     <main>
-      <KeyInfos />
-      <AverageScoreChart />
-      <ActivityTypeChart />
-      <AverageSessionsChart />
-      <ActivityChart />
+      <KeyInfos userId={userId} />
+      <AverageScoreChart userId={userId} />
+      <ActivityTypeChart userId={userId} />
+      <AverageSessionsChart userId={userId} />
+      <ActivityChart userId={userId} />
     </main>
   );
 };
