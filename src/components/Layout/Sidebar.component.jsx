@@ -1,9 +1,11 @@
 import React from "react";
+import VerticalMenu from "../menu/VerticalMenu.component";
 
 const Sidebar = () => {
   return (
-    <div>
-      <h1>Sidebar</h1>
+    <div className="sidebar">
+      <VerticalMenu />
+      <p>Copiryght, SportSee 2020</p>
     </div>
   );
 };

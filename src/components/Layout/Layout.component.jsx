@@ -5,11 +5,13 @@ import Sidebar from "./Sidebar.component.jsx";
 
 const layout = () => {
   return (
-    <>
+    <div className="layout">
       <Header />
-      <Sidebar />
-      <Outlet />
-    </>
+      <div className="main-container">
+        <Sidebar />
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

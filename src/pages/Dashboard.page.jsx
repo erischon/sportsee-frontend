@@ -8,7 +8,7 @@ const Dashboard = () => {
   const userId = 18;
 
   return (
-    <main>
+    <main className="dashboard">
       <KeyInfos userId={userId} />
       <AverageScoreChart userId={userId} />
       <ActivityTypeChart userId={userId} />

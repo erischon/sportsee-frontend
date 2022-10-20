@@ -7,6 +7,9 @@
 @import "./base/base";
 
 // 4. Layout-related sections
+@import "./layout/layout";
+@import "./layout/header";
+@import "./layout/sidebar";
 
 // 5. Components
 @import "./components/activityChart";
@@ -15,5 +18,8 @@
 @import "./components/averageScoreChart";
 @import "./components/keyInfos";
 @import "./components/infoCard";
+@import "./components/verticalMenu";
+@import "./components/menuCard";
 
 // 6. Page-specific styles
+@import "./pages/dashboard";
