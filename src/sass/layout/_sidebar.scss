@@ -1,5 +1,8 @@
 .sidebar {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 117px;
   background-color: #020203;
 }
