@@ -9,11 +9,24 @@ const Dashboard = () => {
 
   return (
     <main className="dashboard">
-      <KeyInfos userId={userId} />
-      <AverageScoreChart userId={userId} />
-      <ActivityTypeChart userId={userId} />
-      <AverageSessionsChart userId={userId} />
-      <ActivityChart userId={userId} />
+      <section className="infos">
+        <h1>Bonjour Thomas</h1>
+      </section>
+      <section className="charts">
+        <div className="container-left">
+          <div className="top">
+            <ActivityChart userId={userId} />
+          </div>
+          <div className="bottom">
+            <AverageScoreChart userId={userId} />
+            <ActivityTypeChart userId={userId} />
+            <AverageSessionsChart userId={userId} />
+          </div>
+        </div>
+        <div className="container-right">
+          <KeyInfos userId={userId} />
+        </div>
+      </section>
     </main>
   );
 };
