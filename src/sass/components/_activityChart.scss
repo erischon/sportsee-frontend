@@ -1,8 +1,11 @@
 .activity-chart {
+  padding-left: 40px;
+  padding-right: 20px;
   width: 835px;
   height: 320px;
 
   font-size: 14px;
+  background-color: #fbfbfb;
 
   .recharts-rectangle {
     width: 10px;

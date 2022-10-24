@@ -11,6 +11,7 @@ const Dashboard = () => {
     <main className="dashboard">
       <section className="infos">
         <h1>Bonjour Thomas</h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>
       <section className="charts">
         <div className="container-left">
@@ -18,9 +19,9 @@ const Dashboard = () => {
             <ActivityChart userId={userId} />
           </div>
           <div className="bottom">
-            <AverageScoreChart userId={userId} />
-            <ActivityTypeChart userId={userId} />
             <AverageSessionsChart userId={userId} />
+            <ActivityTypeChart userId={userId} />
+            <AverageScoreChart userId={userId} />
           </div>
         </div>
         <div className="container-right">

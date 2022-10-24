@@ -9,6 +9,18 @@
   font-size: 15px;
 }
 
+.radial-chart__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  font-size: 15px;
+}
+
 .radial-chart__label {
   display: flex;
   flex-direction: column;

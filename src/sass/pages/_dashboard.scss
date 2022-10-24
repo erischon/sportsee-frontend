@@ -1,17 +1,28 @@
 .dashboard {
-  flex: 6;
-  width: 1300px;
+  width: 100%;
+
+  // margin: 0 auto;
+  margin-left: 100px;
+  // margin-left: 20px;
+
   .infos {
+    margin: 70px;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
   }
 
   .charts {
     display: flex;
 
-    margin-left: 100px;
-    margin-left: 90px;
-
     .container-left {
       .top {
+        margin-bottom: 28px;
       }
       .bottom {
         display: flex;

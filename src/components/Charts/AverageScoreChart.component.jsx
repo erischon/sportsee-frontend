@@ -13,6 +13,7 @@ const AverageScoreChart = ({ userId }) => {
 
   return (
     <div className="average-score-chart">
+      <h2 className="radial-chart__title">Score</h2>
       <article className="radial-chart__label">
         <h2>{`${averageScore[0].score}%`}</h2>
         <span>de votre objectif</span>

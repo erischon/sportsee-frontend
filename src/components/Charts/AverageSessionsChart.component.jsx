@@ -1,4 +1,11 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  YAxis,
+} from "recharts";
 
 import { getUserAverageSessions } from "../../utils/services";
 
@@ -20,6 +27,9 @@ const AverageSessionsChart = ({ userId }) => {
 
   return (
     <div className="average-sessions-chart">
+      <h2 className="average-sessions-chart__title">
+        Durée moyenne des sessions
+      </h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart width={258} height={263} data={sessions}>
           <XAxis
@@ -29,6 +39,7 @@ const AverageSessionsChart = ({ userId }) => {
             stroke="white"
             padding={{ left: 13, right: 13 }}
           />
+          <YAxis padding={{ top: 70, bottom: 20 }} hide={true} />
           <Tooltip content={CustomTooltip} wrapperStyle={{ outline: "none" }} />
           <Line
             type="monotoneX"
