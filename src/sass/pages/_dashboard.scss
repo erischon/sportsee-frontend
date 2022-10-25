@@ -1,12 +1,10 @@
 .dashboard {
   width: 100%;
-
-  // margin: 0 auto;
   margin-left: 100px;
-  // margin-left: 20px;
+  background-color: aqua;
 
   .infos {
-    margin: 70px;
+    margin: 70px 0;
 
     h1 {
       font-size: 48px;
@@ -19,11 +17,13 @@
 
   .charts {
     display: flex;
+    gap: 30px;
 
     .container-left {
       .top {
         margin-bottom: 28px;
       }
+
       .bottom {
         display: flex;
         justify-content: space-between;

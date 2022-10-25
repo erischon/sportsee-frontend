@@ -18,12 +18,14 @@ const Dashboard = () => {
           <div className="top">
             <ActivityChart userId={userId} />
           </div>
+
           <div className="bottom">
             <AverageSessionsChart userId={userId} />
             <ActivityTypeChart userId={userId} />
             <AverageScoreChart userId={userId} />
           </div>
         </div>
+
         <div className="container-right">
           <KeyInfos userId={userId} />
         </div>
