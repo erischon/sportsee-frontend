@@ -17,7 +17,8 @@ function App() {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<Layout />}>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/:id" element={<Dashboard />} />
+        <Route path="/404" element={<NotFound />} />
       </Route>
 
       {/* Other Routes */}
