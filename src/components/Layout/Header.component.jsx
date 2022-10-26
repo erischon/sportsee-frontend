@@ -9,10 +9,10 @@ const header = () => {
           <img src={logo} alt="SpotSee" />
         </div>
         <div className="links">
-          <Link to="dashboard">Accueil</Link>
-          <Link to="dashboard">Profil</Link>
-          <Link to="dashboard">Réglage</Link>
-          <Link to="dashboard">Communauté</Link>
+          <Link to="404">Accueil</Link>
+          <Link to="404">Profil</Link>
+          <Link to="404">Réglage</Link>
+          <Link to="404">Communauté</Link>
         </div>
       </div>
     </header>
