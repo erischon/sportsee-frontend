@@ -45,6 +45,7 @@ const ActivityChart = ({ userId }) => {
 
   return (
     <div className="activity-chart">
+      <h2 className="activity-chart__title">Activité quotidienne</h2>
       <ResponsiveContainer width="100%" height="80%">
         <BarChart
           width={730}
