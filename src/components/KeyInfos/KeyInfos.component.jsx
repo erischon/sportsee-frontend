@@ -1,5 +1,5 @@
 import InfoCard from "./InfoCard.component";
-import { getUserMainData } from "../../utils/services";
+import { getUserMainData } from "../../utils/services.dev";
 import { EnergyIcon, ProteinesIcon, GlucidesIcon, LipidesIcon } from "./Icons";
 
 const KeyInfos = ({ userId }) => {

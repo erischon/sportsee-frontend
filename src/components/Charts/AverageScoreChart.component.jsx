@@ -5,7 +5,7 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
-import { getUserMainData } from "../../utils/services";
+import { getUserMainData } from "../../utils/services.dev";
 
 const AverageScoreChart = ({ userId }) => {
   const mainUserData = getUserMainData(userId);

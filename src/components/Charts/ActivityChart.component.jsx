@@ -9,7 +9,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { getUserActivity } from "../../utils/services";
+import { getUserActivity } from "../../utils/services.dev";
 
 const ActivityChart = ({ userId }) => {
   const userActivity = getUserActivity(userId);

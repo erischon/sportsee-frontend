@@ -5,14 +5,22 @@ import ActivityTypeChart from "../components/Charts/ActivityTypeChart.component"
 import AverageScoreChart from "../components/Charts/AverageScoreChart.component";
 import AverageSessionsChart from "../components/Charts/AverageSessionsChart.component";
 import KeyInfos from "../components/KeyInfos/KeyInfos.component";
-import { getUserMainData } from "../utils/services";
+import useFetch from "../hooks/useFetch";
+// import { getUserMainData } from "../utils/services.prod";
+import { getUserMainData } from "../utils/services.dev";
+
+const API_URL = "http://localhost:3000";
 
 const Dashboard = () => {
   const params = useParams();
 
   const userId = parseInt(params.id);
-  console.log("======", userId);
   const user = getUserMainData(userId);
+
+  // const user = useFetch("http://localhost:3000/user/18");
+  // const user = useFetch(`${API_URL}/user/${userId}`);
+
+  console.log("======USER_IN_DASHBOARD", user);
 
   if (!user) {
     return <Navigate to="/404" replace />;

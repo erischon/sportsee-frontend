@@ -7,7 +7,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { getUserAverageSessions } from "../../utils/services";
+import { getUserAverageSessions } from "../../utils/services.dev";
 
 const AverageSessionsChart = ({ userId }) => {
   const userAverageSessions = getUserAverageSessions(userId);

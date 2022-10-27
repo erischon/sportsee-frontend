@@ -6,7 +6,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { getUserPerformance } from "../../utils/services";
+import { getUserPerformance } from "../../utils/services.dev";
 
 const ActivityTypeChart = ({ userId }) => {
   const activityType = getUserPerformance(userId);
