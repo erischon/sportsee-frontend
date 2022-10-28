@@ -4,6 +4,7 @@ import User from "../models/User";
 import Activity from "../models/Activity";
 import AverageSessions from "../models/AverageSessions";
 import Performance from "../models/Performance";
+import useFetch from "../hooks/useFetch";
 
 const API_URL = "http://localhost:3000";
 
@@ -16,15 +17,12 @@ const USER_PERFORMANCE = "";
  * @param {*} userId
  * @returns
  */
-const getUserMainData = async (userId) => {
+const GetUserMainData = async (userId) => {
   try {
-    const response = await axios.get(`${API_URL}/user/${userId}`);
-    const userData = response.data.data;
+    const userData = useFetch(`${API_URL}/user/${userId}`);
 
     return new User(userData);
-  } catch (err) {
-    console.log(err);
-  }
+  } catch {}
 };
 
 /**
@@ -69,7 +67,7 @@ const getUserPerformance = (userId) => {
 };
 
 export {
-  getUserMainData,
+  GetUserMainData,
   getUserActivity,
   getUserAverageSessions,
   getUserPerformance,

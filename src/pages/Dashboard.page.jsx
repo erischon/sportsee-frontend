@@ -6,25 +6,28 @@ import AverageScoreChart from "../components/Charts/AverageScoreChart.component"
 import AverageSessionsChart from "../components/Charts/AverageSessionsChart.component";
 import KeyInfos from "../components/KeyInfos/KeyInfos.component";
 import useFetch from "../hooks/useFetch";
-// import { getUserMainData } from "../utils/services.prod";
-import { getUserMainData } from "../utils/services.dev";
+// import { getUserMainData } from "../utils/services.dev";
+import { GetUserMainData } from "../utils/services.prod";
+import User from "../models/User";
 
 const API_URL = "http://localhost:3000";
 
 const Dashboard = () => {
   const params = useParams();
-
   const userId = parseInt(params.id);
-  const user = getUserMainData(userId);
 
-  // const user = useFetch("http://localhost:3000/user/18");
-  // const user = useFetch(`${API_URL}/user/${userId}`);
+  const user = GetUserMainData(userId);
+  console.log("======USER", user);
+  // const userData = useFetch(`${API_URL}/user/${userId}`);
+  // console.log("======USERDATA_IN_DASHBOARD", userData);
 
-  console.log("======USER_IN_DASHBOARD", user);
+  // if (userData) {
+  //   user = new User(userData);
+  // }
 
-  if (!user) {
-    return <Navigate to="/404" replace />;
-  }
+  // if (user === undefined) {
+  //   return <Navigate to="/404" replace />;
+  // }
 
   return (
     <main className="dashboard">
