@@ -9,12 +9,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { getUserActivity } from "../../utils/services.dev";
-
-const ActivityChart = ({ userId }) => {
-  const userActivity = getUserActivity(userId);
-  const sessions = userActivity.sessions;
-
+const ActivityChart = ({ sessions }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

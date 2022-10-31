@@ -7,9 +7,9 @@ import {
 
 import { getUserMainData } from "../../utils/services.dev";
 
-const AverageScoreChart = ({ userId }) => {
-  const mainUserData = getUserMainData(userId);
-  const averageScore = [{ score: mainUserData.todayScore * 100 }];
+const AverageScoreChart = ({ averageScore }) => {
+  // const mainUserData = getUserMainData(userId);
+  // const averageScore = [{ score: mainUserData.todayScore * 100 }];
 
   return (
     <div className="average-score-chart">

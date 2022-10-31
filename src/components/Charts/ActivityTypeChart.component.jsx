@@ -8,9 +8,9 @@ import {
 
 import { getUserPerformance } from "../../utils/services.dev";
 
-const ActivityTypeChart = ({ userId }) => {
-  const activityType = getUserPerformance(userId);
-  const performance = activityType.data;
+const ActivityTypeChart = ({ performance }) => {
+  // const activityType = getUserPerformance(userId);
+  // const performance = activityType.data;
 
   return (
     <div className="activity-type-chart">

@@ -7,12 +7,7 @@ import {
   YAxis,
 } from "recharts";
 
-import { getUserAverageSessions } from "../../utils/services.dev";
-
-const AverageSessionsChart = ({ userId }) => {
-  const userAverageSessions = getUserAverageSessions(userId);
-  const sessions = userAverageSessions.sessions;
-
+const AverageSessionsChart = ({ sessions }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (

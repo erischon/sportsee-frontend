@@ -1,9 +1,7 @@
 import InfoCard from "./InfoCard.component";
-import { getUserMainData } from "../../utils/services.dev";
 import { EnergyIcon, ProteinesIcon, GlucidesIcon, LipidesIcon } from "./Icons";
 
-const KeyInfos = ({ userId }) => {
-  const userMainData = getUserMainData(userId);
+const KeyInfos = ({ userMainData }) => {
   const { lipidCount, proteinCount, calorieCount, carbohydrateCount } =
     userMainData;
 
