@@ -17,7 +17,7 @@ const USER_PERFORMANCE = "";
  * @param {*} userId
  * @returns
  */
-const GetUserMainData = async (userId) => {
+const getUserMainData = async (userId) => {
   try {
     const userData = useFetch(`${API_URL}/user/${userId}`);
 
@@ -67,7 +67,7 @@ const getUserPerformance = (userId) => {
 };
 
 export {
-  GetUserMainData,
+  getUserMainData,
   getUserActivity,
   getUserAverageSessions,
   getUserPerformance,

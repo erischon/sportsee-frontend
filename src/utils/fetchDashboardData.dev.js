@@ -12,7 +12,7 @@ const fetchDashboardDataDev = (userId) => {
 
   //
   const userActivityData = getUserActivity(userId);
-  const userActivity = userActivityData.sessions;
+  const userActivitySessions = userActivityData.sessions;
 
   //
   const userAverageSessionsData = getUserAverageSessions(userId);
@@ -25,7 +25,7 @@ const fetchDashboardDataDev = (userId) => {
   const allUserData = {
     userMainData: userMainData,
     userAverageScore: userAverageScore,
-    userActivity: userActivity,
+    userActivitySessions: userActivitySessions,
     userAverageSessions: userAverageSessions,
     userActivityType: userActivityType,
   };

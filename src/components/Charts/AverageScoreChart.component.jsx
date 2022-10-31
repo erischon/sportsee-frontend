@@ -5,12 +5,7 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
-import { getUserMainData } from "../../utils/services.dev";
-
 const AverageScoreChart = ({ averageScore }) => {
-  // const mainUserData = getUserMainData(userId);
-  // const averageScore = [{ score: mainUserData.todayScore * 100 }];
-
   return (
     <div className="average-score-chart">
       <h2 className="radial-chart__title">Score</h2>

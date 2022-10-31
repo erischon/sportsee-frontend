@@ -23,6 +23,7 @@ const useFetch = (url) => {
     getData();
   }, [url]);
 
+  console.log("======FETCH_DATA", data);
   return data ? data : error;
 };
 
