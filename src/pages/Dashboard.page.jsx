@@ -5,15 +5,9 @@ import ActivityTypeChart from "../components/Charts/ActivityTypeChart.component"
 import AverageScoreChart from "../components/Charts/AverageScoreChart.component";
 import AverageSessionsChart from "../components/Charts/AverageSessionsChart.component";
 import KeyInfos from "../components/KeyInfos/KeyInfos.component";
-import useFetch from "../hooks/useFetch";
-import {
-  getUserMainData,
-  getUserActivity,
-  getUserAverageSessions,
-  getUserPerformance,
-} from "../utils/services.dev";
 // import { GetUserMainData } from "../utils/services.prod";
-import User from "../models/User";
+
+import fetchDashboardDataDev from "../utils/fetchDashboardData.dev";
 
 const API_URL = "http://localhost:3000";
 
@@ -21,25 +15,13 @@ const Dashboard = () => {
   const params = useParams();
   const userId = parseInt(params.id);
 
-  //
-  const userMainData = getUserMainData(userId);
-  const userAverageScore = [{ score: userMainData.todayScore * 100 }];
-
-  //
-  const userActivityData = getUserActivity(userId);
-  const userActivity = userActivityData.sessions;
-
-  //
-  const userAverageSessionsData = getUserAverageSessions(userId);
-  const userAverageSessions = userAverageSessionsData.sessions;
-
-  //
-  const userActivityTypeData = getUserPerformance(userId);
-  const userActivityType = userActivityTypeData.data;
-
-  //
-
-  console.log(userActivity);
+  const {
+    userMainData,
+    userAverageScore,
+    userActivity,
+    userAverageSessions,
+    userActivityType,
+  } = fetchDashboardDataDev(userId);
 
   // const userMainData = useFetch(`${API_URL}/user/${userId}`);
   // console.log("======USER_MAIN_DATA", userMainData);
