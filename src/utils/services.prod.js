@@ -4,13 +4,8 @@ import User from "../models/User";
 import Activity from "../models/Activity";
 import AverageSessions from "../models/AverageSessions";
 import Performance from "../models/Performance";
-import useFetch from "../hooks/useFetch";
 
 const API_URL = "http://localhost:3000";
-
-const USER_ACTIVITY = "";
-const USER_AVERAGE_SESSIONS = "";
-const USER_PERFORMANCE = "";
 
 /**
  *
@@ -19,10 +14,13 @@ const USER_PERFORMANCE = "";
  */
 const getUserMainData = async (userId) => {
   try {
-    const userData = useFetch(`${API_URL}/user/${userId}`);
+    const response = await axios.get(`${API_URL}/user/${userId}`);
+    const userData = response.data.data;
 
     return new User(userData);
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 /**
@@ -30,12 +28,15 @@ const getUserMainData = async (userId) => {
  * @param {number} userId
  * @returns {Object}
  */
-const getUserActivity = (userId) => {
+const getUserActivity = async (userId) => {
   try {
-    const userData = USER_ACTIVITY.find((item) => item.userId === userId);
+    const response = await axios.get(`${API_URL}/user/${userId}/activity`);
+    const userData = response.data.data;
 
     return new Activity(userData);
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 /**
@@ -43,14 +44,17 @@ const getUserActivity = (userId) => {
  * @param {*} userId
  * @returns
  */
-const getUserAverageSessions = (userId) => {
+const getUserAverageSessions = async (userId) => {
   try {
-    const userData = USER_AVERAGE_SESSIONS.find(
-      (item) => item.userId === userId
+    const response = await axios.get(
+      `${API_URL}/user/${userId}/average-sessions`
     );
+    const userData = response.data.data;
 
     return new AverageSessions(userData);
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 /**
@@ -58,12 +62,15 @@ const getUserAverageSessions = (userId) => {
  * @param {*} userId
  * @returns
  */
-const getUserPerformance = (userId) => {
+const getUserPerformance = async (userId) => {
   try {
-    const userData = USER_PERFORMANCE.find((item) => item.userId === userId);
+    const response = await axios.get(`${API_URL}/user/${userId}/performance`);
+    const userData = response.data.data;
 
     return new Performance(userData);
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export {

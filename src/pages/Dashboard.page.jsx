@@ -8,9 +8,7 @@ import AverageSessionsChart from "../components/Charts/AverageSessionsChart.comp
 import KeyInfos from "../components/KeyInfos/KeyInfos.component";
 
 import fetchDashboardDataDev from "../utils/fetchDashboardData.dev";
-import useFetch from "../hooks/useFetch";
-
-const API_URL = "http://localhost:3000";
+import FetchDashboardDataProd from "../utils/FetchDashboardData.prod";
 
 const Dashboard = () => {
   const params = useParams();
@@ -29,6 +27,29 @@ const Dashboard = () => {
   useEffect(() => {
     if (mode === "development") {
       const userMainData = fetchDashboardDataDev(userId);
+      setLoading(true);
+
+      userMainData ? setUserExist(true) : setUserExist(false);
+
+      if (userExist) {
+        const {
+          userMainData,
+          userAverageScore,
+          userActivitySessions,
+          userAverageSessions,
+          userActivityType,
+        } = fetchDashboardDataDev(userId);
+
+        setMainData(userMainData);
+        setAverageScore(userAverageScore);
+        setActivitySessions(userActivitySessions);
+        setAverageSessions(userAverageSessions);
+        setActivityType(userActivityType);
+      }
+    }
+
+    if (mode === "production") {
+      const userMainData = FetchDashboardDataProd(userId);
       setLoading(true);
 
       userMainData ? setUserExist(true) : setUserExist(false);
@@ -70,6 +91,7 @@ const Dashboard = () => {
   return (
     <main className="dashboard">
       <section className="infos">
+        <p>{mode}</p>
         <h1>Bonjour {mainData?.firstName}</h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>

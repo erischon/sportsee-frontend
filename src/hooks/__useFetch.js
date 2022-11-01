@@ -12,7 +12,6 @@ const useFetch = (url) => {
       .then((userData) => setData(userData));
   });
 
-  console.log("======DATA", data);
   return data;
 };
 
