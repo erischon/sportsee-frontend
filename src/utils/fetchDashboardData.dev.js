@@ -6,31 +6,35 @@ import {
 } from "./services.dev";
 
 const fetchDashboardDataDev = (userId) => {
-  //
+  // Verify if user exist
   const userMainData = getUserMainData(userId);
-  const userAverageScore = [{ score: userMainData.todayScore * 100 }];
 
-  //
-  const userActivityData = getUserActivity(userId);
-  const userActivitySessions = userActivityData.sessions;
+  if (userMainData) {
+    const userAverageScore = [{ score: userMainData.todayScore * 100 }];
 
-  //
-  const userAverageSessionsData = getUserAverageSessions(userId);
-  const userAverageSessions = userAverageSessionsData.sessions;
+    const userActivityData = getUserActivity(userId);
+    const userActivitySessions = userActivityData.sessions;
 
-  //
-  const userActivityTypeData = getUserPerformance(userId);
-  const userActivityType = userActivityTypeData.data;
+    const userAverageSessionsData = getUserAverageSessions(userId);
+    const userAverageSessions = userAverageSessionsData.sessions;
 
-  const allUserData = {
-    userMainData: userMainData,
-    userAverageScore: userAverageScore,
-    userActivitySessions: userActivitySessions,
-    userAverageSessions: userAverageSessions,
-    userActivityType: userActivityType,
-  };
+    const userActivityTypeData = getUserPerformance(userId);
+    const userActivityType = userActivityTypeData.data;
 
-  return allUserData;
+    const allUserData = {
+      userMainData: userMainData,
+      userAverageScore: userAverageScore,
+      userActivitySessions: userActivitySessions,
+      userAverageSessions: userAverageSessions,
+      userActivityType: userActivityType,
+    };
+
+    return allUserData;
+  } else {
+    const allUserData = null;
+
+    return allUserData;
+  }
 };
 
 export default fetchDashboardDataDev;

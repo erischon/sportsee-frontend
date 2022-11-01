@@ -17,6 +17,9 @@ const Dashboard = () => {
   const userId = parseInt(params.id);
   const mode = process.env.REACT_APP_MODE;
 
+  const [userExist, setUserExist] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const [mainData, setMainData] = useState();
   const [averageScore, setAverageScore] = useState();
   const [activitySessions, setActivitySessions] = useState();
@@ -24,36 +27,29 @@ const Dashboard = () => {
   const [activityType, setActivityType] = useState();
 
   useEffect(() => {
-    // if (mode === "development") {
-    // const {
-    //   userMainData,
-    //   userAverageScore,
-    //   userActivitySessions,
-    //   userAverageSessions,
-    //   userActivityType,
-    // } = fetchDashboardDataDev(userId);
+    if (mode === "development") {
+      const userMainData = fetchDashboardDataDev(userId);
+      setLoading(true);
 
-    console.log("======Toto");
-    // console.log("======USER_MAIN_DATA", userMainData);
+      userMainData ? setUserExist(true) : setUserExist(false);
 
-    // setMainData(userMainData);
-    // setAverageScore(userAverageScore);
-    // setActivitySessions(userActivitySessions);
-    // setAverageSessions(userAverageSessions);
-    // setActivityType(userActivityType);
-    // }
-  }, []);
+      if (userExist) {
+        const {
+          userMainData,
+          userAverageScore,
+          userActivitySessions,
+          userAverageSessions,
+          userActivityType,
+        } = fetchDashboardDataDev(userId);
 
-  console.log("======MAIN_DATA", mainData);
-  console.log("======AVERAGE_SCORE", averageScore);
-
-  // const {
-  //   userMainData,
-  //   userAverageScore,
-  //   userActivitySessions,
-  //   userAverageSessions,
-  //   userActivityType,
-  // } = fetchDashboardDataDev(userId);
+        setMainData(userMainData);
+        setAverageScore(userAverageScore);
+        setActivitySessions(userActivitySessions);
+        setAverageSessions(userAverageSessions);
+        setActivityType(userActivityType);
+      }
+    }
+  }, [userId, mode, userExist]);
 
   // const userMainData = useFetch(`${API_URL}/user/${userId}`);
   // console.log("======USER_MAIN_DATA", userMainData);
@@ -67,13 +63,9 @@ const Dashboard = () => {
   // console.log("======USER_MAIN_DATA", userMainData);
   // const userActivityData = new User(userMainData);
 
-  // if (userData) {
-  //   user = new User(userData);
-  // }
-
-  // if (user === undefined) {
-  //   return <Navigate to="/404" replace />;
-  // }
+  if (loading && !userExist) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <main className="dashboard">
@@ -81,21 +73,44 @@ const Dashboard = () => {
         <h1>Bonjour {mainData?.firstName}</h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>
+
       <section className="charts">
         <div className="container-left">
           <div className="top">
-            <ActivityChart sessions={activitySessions} />
+            {activitySessions ? (
+              <ActivityChart sessions={activitySessions} />
+            ) : (
+              <p>Désolé, il n'y a aucune données</p>
+            )}
           </div>
 
           <div className="bottom">
-            <AverageSessionsChart sessions={averageSessions} />
-            <ActivityTypeChart performance={activityType} />
-            <AverageScoreChart averageScore={averageScore} />
+            {averageSessions ? (
+              <AverageSessionsChart sessions={averageSessions} />
+            ) : (
+              <p>Désolé, il n'y a aucune données</p>
+            )}
+
+            {activityType ? (
+              <ActivityTypeChart performance={activityType} />
+            ) : (
+              <p>Désolé, il n'y a aucune données</p>
+            )}
+
+            {averageScore ? (
+              <AverageScoreChart averageScore={averageScore} />
+            ) : (
+              <p>Désolé, il n'y a aucune données</p>
+            )}
           </div>
         </div>
 
         <div className="container-right">
-          <KeyInfos userMainData={mainData} />
+          {mainData ? (
+            <KeyInfos userMainData={mainData} />
+          ) : (
+            <p>Désolé, il n'y a aucune données</p>
+          )}
         </div>
       </section>
     </main>
