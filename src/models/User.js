@@ -10,7 +10,6 @@ export default class User {
   lipidCount;
 
   constructor(data) {
-    console.log("======USER_DATA_TO_MODEL", data);
     this.userId = data.id;
     this.firstName = data.userInfos.firstName;
     this.lastName = data.userInfos.lastName;

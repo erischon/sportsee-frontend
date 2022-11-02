@@ -7,7 +7,11 @@ import {
 
 const fetchDashboardDataProd = (userId) => {
   // Verify if user exist
-  const userMainData = getUserMainData(userId);
+  try {
+    const userMainData = getUserMainData(userId);
+
+    return userMainData;
+  } catch {}
 
   if (userMainData) {
     const userAverageScore = [{ score: userMainData.todayScore * 100 }];
