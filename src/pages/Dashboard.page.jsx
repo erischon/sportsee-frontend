@@ -52,8 +52,6 @@ const Dashboard = () => {
       const userMainData = FetchDashboardDataProd(userId);
       setLoading(true);
 
-      // console.log("======USER_MAIN_DATA", userMainData);
-
       userMainData ? setUserExist(true) : setUserExist(false);
 
       if (userExist) {

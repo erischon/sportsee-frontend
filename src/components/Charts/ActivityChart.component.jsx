@@ -10,9 +10,10 @@ import {
 } from "recharts";
 
 /**
- *
- * @param {*} param0
- * @returns
+ * Component who display the Activity Chart
+ * @component
+ * @param {Object} sessions
+ * @returns {ReactElement}
  */
 const ActivityChart = ({ sessions }) => {
   /**
