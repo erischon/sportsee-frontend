@@ -9,7 +9,17 @@ import {
   CartesianGrid,
 } from "recharts";
 
+/**
+ *
+ * @param {*} param0
+ * @returns
+ */
 const ActivityChart = ({ sessions }) => {
+  /**
+   *
+   * @param {*} param0
+   * @returns
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -23,6 +33,11 @@ const ActivityChart = ({ sessions }) => {
     return null;
   };
 
+  /**
+   *
+   * @param {*} param0
+   * @returns
+   */
   const CustomLegend = ({ payload }) => {
     return (
       <div className="custom-legend">

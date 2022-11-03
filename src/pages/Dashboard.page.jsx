@@ -52,6 +52,8 @@ const Dashboard = () => {
       const userMainData = FetchDashboardDataProd(userId);
       setLoading(true);
 
+      // console.log("======USER_MAIN_DATA", userMainData);
+
       userMainData ? setUserExist(true) : setUserExist(false);
 
       if (userExist) {
@@ -71,18 +73,6 @@ const Dashboard = () => {
       }
     }
   }, [userId, mode, userExist]);
-
-  // const userMainData = useFetch(`${API_URL}/user/${userId}`);
-  // console.log("======USER_MAIN_DATA", userMainData);
-  // const userAverageScore = useFetch(`${API_URL}/user/${userId}`);
-  // const userActivity = useFetch(`${API_URL}/user/${userId}/activity`);
-  // const userAverageSessions = useFetch(
-  //   `${API_URL}/user/${userId}/average-sessions`
-  // );
-  // const userActivityType = useFetch(`${API_URL}/user/${userId}/performance`);
-
-  // console.log("======USER_MAIN_DATA", userMainData);
-  // const userActivityData = new User(userMainData);
 
   if (loading && !userExist) {
     return <Navigate to="/404" replace />;

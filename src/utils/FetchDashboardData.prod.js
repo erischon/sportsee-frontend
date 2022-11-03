@@ -6,12 +6,15 @@ import {
 } from "./services.prod";
 
 const fetchDashboardDataProd = (userId) => {
+  let userMainData = null;
   // Verify if user exist
   try {
-    const userMainData = getUserMainData(userId);
+    userMainData = getUserMainData(userId);
 
     return userMainData;
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 
   if (userMainData) {
     const userAverageScore = [{ score: userMainData.todayScore * 100 }];

@@ -5,13 +5,6 @@ import Dashboard from "./pages/Dashboard.page";
 import NotFound from "./pages/NotFound.page";
 
 function App() {
-  // let data = null;
-
-  // (async () => {
-  //   data = await Service();
-  // })();
-  // console.log("======APP", data);
-
   return (
     <Routes>
       {/* Public Routes */}

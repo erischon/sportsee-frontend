@@ -19,7 +19,8 @@ const getUserMainData = async (userId) => {
 
     return new User(userData);
   } catch (err) {
-    console.log(err);
+    console.log("getUserMainData error: ", err);
+    return;
   }
 };
 
@@ -35,7 +36,7 @@ const getUserActivity = async (userId) => {
 
     return new Activity(userData);
   } catch (err) {
-    console.log(err);
+    console.log("getUserActivity error: ", err);
   }
 };
 
@@ -53,7 +54,7 @@ const getUserAverageSessions = async (userId) => {
 
     return new AverageSessions(userData);
   } catch (err) {
-    console.log(err);
+    console.log("getUserAverageSessions error: ", err);
   }
 };
 
@@ -69,7 +70,7 @@ const getUserPerformance = async (userId) => {
 
     return new Performance(userData);
   } catch (err) {
-    console.log(err);
+    console.log("getUserPerformance error: ", err);
   }
 };
 
