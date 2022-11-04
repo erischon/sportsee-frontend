@@ -9,7 +9,7 @@ const API_URL = "http://localhost:3000";
 
 /**
  *
- * @param {*} userId
+ * @param {number} userId
  * @returns
  */
 const getUserMainData = async (userId) => {
