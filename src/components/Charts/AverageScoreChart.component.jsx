@@ -8,7 +8,8 @@ import {
 /**
  * Component who display Average Score Chart
  * @component
- * @param {{score: number}[]} averageScore
+ * @param {Object} props
+ * @param {{score: number}[]} props.averageScore
  * @returns {React.ReactElement}
  */
 const AverageScoreChart = ({ averageScore }) => {

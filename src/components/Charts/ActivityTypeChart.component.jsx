@@ -9,7 +9,8 @@ import {
 /**
  * Component who display Activity Type Chart
  * @component
- * @param {{value: number, kind: string}[]} performance
+ * @param {Object} props
+ * @param {{value: number, kind: string}[]} props.performance
  * @returns {React.ReactElement}
  */
 const ActivityTypeChart = ({ performance }) => {

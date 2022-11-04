@@ -10,7 +10,8 @@ import {
 /**
  * Component who display Average Sessions Chart
  * @component
- * @param {{day: string, sessionLength: number}[]} sessions
+ * @param {Object} props
+ * @param {{day: string, sessionLength: number}[]} props.sessions
  * @returns {React.ReactElement}
  */
 const AverageSessionsChart = ({ sessions }) => {
