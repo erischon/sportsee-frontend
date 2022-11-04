@@ -1,3 +1,6 @@
+/**
+ *
+ */
 export default class Activity {
   userId;
   sessions;
@@ -11,6 +14,11 @@ export default class Activity {
     }));
   }
 
+  /**
+   *
+   * @param {*} date
+   * @returns
+   */
   getDay = (date) => {
     const dateObj = new Date(date);
 

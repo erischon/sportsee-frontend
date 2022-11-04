@@ -7,6 +7,12 @@ import {
   YAxis,
 } from "recharts";
 
+/**
+ * Component who display Average Sessions Chart
+ * @component
+ * @param {{day: string, sessionLength: number}[]} sessions
+ * @returns {React.ReactElement}
+ */
 const AverageSessionsChart = ({ sessions }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {

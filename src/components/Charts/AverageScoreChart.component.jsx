@@ -5,6 +5,12 @@ import {
   PolarAngleAxis,
 } from "recharts";
 
+/**
+ * Component who display Average Score Chart
+ * @component
+ * @param {{score: number}[]} averageScore
+ * @returns {React.ReactElement}
+ */
 const AverageScoreChart = ({ averageScore }) => {
   return (
     <div className="average-score-chart">

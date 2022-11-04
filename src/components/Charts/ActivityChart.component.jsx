@@ -10,17 +10,12 @@ import {
 } from "recharts";
 
 /**
- * Component who display the Activity Chart
+ * Component who display Activity Chart
  * @component
- * @param {Object} sessions
- * @returns {ReactElement}
+ * @param {{day: number, kilogram: number, calories: number}[]} sessions
+ * @returns {React.ReactElement}
  */
 const ActivityChart = ({ sessions }) => {
-  /**
-   *
-   * @param {*} param0
-   * @returns
-   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -34,11 +29,6 @@ const ActivityChart = ({ sessions }) => {
     return null;
   };
 
-  /**
-   *
-   * @param {*} param0
-   * @returns
-   */
   const CustomLegend = ({ payload }) => {
     return (
       <div className="custom-legend">

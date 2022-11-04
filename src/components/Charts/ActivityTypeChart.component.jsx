@@ -6,12 +6,13 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { getUserPerformance } from "../../utils/services.dev";
-
+/**
+ * Component who display Activity Type Chart
+ * @component
+ * @param {{value: number, kind: string}[]} performance
+ * @returns {React.ReactElement}
+ */
 const ActivityTypeChart = ({ performance }) => {
-  // const activityType = getUserPerformance(userId);
-  // const performance = activityType.data;
-
   return (
     <div className="activity-type-chart">
       <ResponsiveContainer width="100%" height="100%">
