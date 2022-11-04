@@ -1,6 +1,13 @@
 import InfoCard from "./InfoCard.component";
 import { EnergyIcon, ProteinesIcon, GlucidesIcon, LipidesIcon } from "./Icons";
 
+/**
+ * Component who generate Key Infos
+ * @component
+ * @param {Object} props
+ * @param {{lipidCount: number, proteinCount: number, calorieCount: number, carbohydrateCount: number}} props.userMainData
+ * @returns {React.ReactElement}
+ */
 const KeyInfos = ({ userMainData }) => {
   const { lipidCount, proteinCount, calorieCount, carbohydrateCount } =
     userMainData;

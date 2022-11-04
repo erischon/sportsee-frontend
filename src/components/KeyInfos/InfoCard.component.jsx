@@ -1,8 +1,13 @@
-import React from "react";
-
 import LogoCard from "./LogoCard.component";
-// import { EnergyIcon } from "./Icons";
 
+/**
+ * Component who display InfoCard
+ * @component
+ * @param {Object} props
+ * @param {{color: string, symbol: string, type: string, value: number}} props.infos
+ * @param {JSX.Element} props.children
+ * @returns {React.ReactElement}
+ */
 const InfoCard = ({ infos, children }) => {
   const { color, value, symbol, type } = infos;
   // Converting the value to en-US locale-specific numeric representation
