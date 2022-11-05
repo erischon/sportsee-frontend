@@ -49,26 +49,32 @@ const Dashboard = () => {
     }
 
     if (mode === "production") {
-      const userMainData = FetchDashboardDataProd(userId);
-      setLoading(true);
+      const userMainData = null;
 
-      userMainData ? setUserExist(true) : setUserExist(false);
+      FetchDashboardDataProd(userId)
+        .then((data) => {
+          setLoading(true);
+          data ? setUserExist(true) : setUserExist(false);
 
-      if (userExist) {
-        const {
-          userMainData,
-          userAverageScore,
-          userActivitySessions,
-          userAverageSessions,
-          userActivityType,
-        } = fetchDashboardDataDev(userId);
+          if (userExist) {
+            const {
+              userMainData,
+              userAverageScore,
+              userActivitySessions,
+              userAverageSessions,
+              userActivityType,
+            } = data;
 
-        setMainData(userMainData);
-        setAverageScore(userAverageScore);
-        setActivitySessions(userActivitySessions);
-        setAverageSessions(userAverageSessions);
-        setActivityType(userActivityType);
-      }
+            setMainData(userMainData);
+            setAverageScore(userAverageScore);
+            setActivitySessions(userActivitySessions);
+            setAverageSessions(userAverageSessions);
+            setActivityType(userActivityType);
+          }
+        })
+        .catch((err) => {
+          console.log("======ERROR", err);
+        });
     }
   }, [userId, mode, userExist]);
 

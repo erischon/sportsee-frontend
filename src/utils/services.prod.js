@@ -20,7 +20,7 @@ const getUserMainData = async (userId) => {
     return new User(userData);
   } catch (err) {
     console.log("getUserMainData error: ", err);
-    return;
+    return null;
   }
 };
 
