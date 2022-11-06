@@ -24,6 +24,9 @@ const Dashboard = () => {
   const [averageSessions, setAverageSessions] = useState();
   const [activityType, setActivityType] = useState();
 
+  /**
+   *
+   */
   useEffect(() => {
     if (mode === "development") {
       const userMainData = fetchDashboardDataDev(userId);
