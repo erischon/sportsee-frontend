@@ -5,6 +5,11 @@ import {
   getUserPerformance,
 } from "./services.dev";
 
+/**
+ *
+ * @param {*} userId
+ * @returns
+ */
 const fetchDashboardDataDev = (userId) => {
   // Verify if user exist
   const userMainData = getUserMainData(userId);
