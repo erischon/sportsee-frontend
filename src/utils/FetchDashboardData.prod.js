@@ -5,6 +5,11 @@ import {
   getUserPerformance,
 } from "./services.prod";
 
+/**
+ *
+ * @param {*} userId
+ * @returns
+ */
 const fetchDashboardDataProd = async (userId) => {
   let userMainData = null;
   // Verify if user exist
