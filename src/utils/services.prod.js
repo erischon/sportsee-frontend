@@ -10,7 +10,7 @@ const API_URL = "http://localhost:3000";
 /**
  *
  * @param {number} userId
- * @returns
+ * @returns {Object}
  */
 const getUserMainData = async (userId) => {
   try {
@@ -43,7 +43,7 @@ const getUserActivity = async (userId) => {
 /**
  *
  * @param {*} userId
- * @returns
+ * @returns {Object}
  */
 const getUserAverageSessions = async (userId) => {
   try {
@@ -61,7 +61,7 @@ const getUserAverageSessions = async (userId) => {
 /**
  *
  * @param {*} userId
- * @returns
+ * @returns {Object}
  */
 const getUserPerformance = async (userId) => {
   try {
