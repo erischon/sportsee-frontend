@@ -13,7 +13,7 @@ import Performance from "../models/Performance";
 /**
  *
  * @param {*} userId
- * @returns
+ * @returns {Object}
  */
 const getUserMainData = (userId) => {
   try {
@@ -39,7 +39,7 @@ const getUserActivity = (userId) => {
 /**
  *
  * @param {*} userId
- * @returns
+ * @returns {Object}
  */
 const getUserAverageSessions = (userId) => {
   try {
@@ -54,7 +54,7 @@ const getUserAverageSessions = (userId) => {
 /**
  *
  * @param {*} userId
- * @returns
+ * @returns {Object}
  */
 const getUserPerformance = (userId) => {
   try {
