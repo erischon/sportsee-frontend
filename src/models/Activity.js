@@ -1,10 +1,12 @@
-/**
- *
- */
+/** */
 export default class Activity {
   userId;
   sessions;
 
+  /**
+   *
+   * @param {*} data
+   */
   constructor(data) {
     this.userId = data.userId;
     this.sessions = data.sessions.map(({ day, kilogram, calories }) => ({

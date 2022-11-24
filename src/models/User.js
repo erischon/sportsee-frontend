@@ -1,3 +1,4 @@
+/** */
 export default class User {
   userId;
   firstName;
@@ -9,6 +10,10 @@ export default class User {
   carbohydrateCount;
   lipidCount;
 
+  /**
+   *
+   * @param {*} data
+   */
   constructor(data) {
     this.userId = data.id;
     this.firstName = data.userInfos.firstName;
