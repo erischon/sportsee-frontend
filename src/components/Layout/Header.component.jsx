@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 
 const header = () => {
+  const mode = process.env.REACT_APP_MODE;
+
   return (
     <header>
       <div className="wrapper">
         <div className="brand">
           <img src={logo} alt="SpotSee" />
+          <p>({mode})</p>
         </div>
         <div className="links">
           <Link to="404">Accueil</Link>

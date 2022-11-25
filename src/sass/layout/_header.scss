@@ -16,6 +16,13 @@ header {
       display: flex;
       align-items: center;
       width: 178px;
+
+      p {
+        margin-left: 0.5rem;
+        color: white;
+        font-size: 12px;
+        font-style: italic;
+      }
     }
 
     .links {

@@ -52,7 +52,7 @@ const Dashboard = () => {
     }
 
     if (mode === "production") {
-      const userMainData = null;
+      // const userMainData = null;
 
       FetchDashboardDataProd(userId)
         .then((data) => {
@@ -88,7 +88,6 @@ const Dashboard = () => {
   return (
     <main className="dashboard">
       <section className="infos">
-        <p>{mode}</p>
         <h1>Bonjour {mainData?.firstName}</h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       </section>
