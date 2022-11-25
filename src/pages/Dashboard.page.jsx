@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 
 import ActivityChart from "../components/Charts/ActivityChart.component";
@@ -10,6 +10,11 @@ import KeyInfos from "../components/KeyInfos/KeyInfos.component";
 import fetchDashboardDataDev from "../utils/fetchDashboardData.dev";
 import FetchDashboardDataProd from "../utils/FetchDashboardData.prod";
 
+/**
+ * Display Dashboard Page
+ * @component
+ * @returns {React.ReactElement}
+ */
 const Dashboard = () => {
   const params = useParams();
   const userId = parseInt(params.id);
