@@ -2,11 +2,19 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
-    <main className="not-found">
-      <div className="not-found__container">
+    <main className="home">
+      <div className="home__container">
         <h1>HOME</h1>
       </div>
-      <Link to="/dashboard/12">Ouvrir le Dashboard</Link>
+      <div className="home__links">
+        <Link to="/dashboard/12" className="link">
+          Ouvrir le Dashboard de Karl
+        </Link>
+        <br />
+        <Link to="/dashboard/18" className="link">
+          Ouvrir le Dashboard de Cécilia
+        </Link>
+      </div>
     </main>
   );
 };

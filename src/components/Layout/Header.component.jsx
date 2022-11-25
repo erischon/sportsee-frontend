@@ -17,10 +17,10 @@ const header = () => {
           <p>({mode})</p>
         </div>
         <div className="links">
-          <Link to="404">Accueil</Link>
-          <Link to="404">Profil</Link>
-          <Link to="404">Réglage</Link>
-          <Link to="404">Communauté</Link>
+          <Link to="/">Accueil</Link>
+          <Link to="/">Profil</Link>
+          <Link to="/">Réglage</Link>
+          <Link to="/">Communauté</Link>
         </div>
       </div>
     </header>

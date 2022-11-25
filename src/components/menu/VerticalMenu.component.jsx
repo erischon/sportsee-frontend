@@ -12,22 +12,22 @@ const VerticalMenu = () => {
   return (
     <div className="vertical-menu">
       <MenuCard>
-        <Link to="404">
+        <Link to="/">
           <Menu1 />
         </Link>
       </MenuCard>
       <MenuCard>
-        <Link to="404">
+        <Link to="/">
           <Menu2 />
         </Link>
       </MenuCard>
       <MenuCard>
-        <Link to="404">
+        <Link to="/">
           <Menu3 />
         </Link>
       </MenuCard>
       <MenuCard>
-        <Link to="404">
+        <Link to="/">
           <Menu4 />
         </Link>
       </MenuCard>
