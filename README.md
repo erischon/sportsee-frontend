@@ -54,11 +54,13 @@ SportSee is a startup based on sports coaching. To improve the user experience, 
 
 ### mode Development (default mode)
 
-you must have `REACT_APP_MODE = "development”` active in the file sportsee-frontend/.env
+- you must have `REACT_APP_MODE = "development”` active in the file sportsee-frontend/.env
+- This mode use Mocked Data
 
 ### mode Production
 
-you must have `REACT_APP_MODE = "production”` active in the file sportsee-frontend/.env
+- you must have `REACT_APP_MODE = "production”` active in the file sportsee-frontend/.env
+- This mode use Backend API
 
 When you switch the mode you must re start the App :
 
