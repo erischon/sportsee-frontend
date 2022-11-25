@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 
+/**
+ * Header component
+ * @component
+ * @returns {React.ReactElement}
+ */
 const header = () => {
   const mode = process.env.REACT_APP_MODE;
 

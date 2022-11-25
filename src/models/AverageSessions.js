@@ -1,7 +1,12 @@
+/** */
 export default class AverageSessions {
   userId;
   sessions;
 
+  /**
+   *
+   * @param {*} data
+   */
   constructor(data) {
     this.userId = data.userId;
     this.sessions = data.sessions.map(({ day, sessionLength }) => ({
@@ -10,6 +15,11 @@ export default class AverageSessions {
     }));
   }
 
+  /**
+   *
+   * @param {*} day
+   * @returns
+   */
   getDayName = (day) => {
     const weekday = ["L", "M", "M", "J", "V", "S", "D"];
 

@@ -3,7 +3,7 @@ import menu2 from "../../assets/icons/menu2.svg";
 import menu3 from "../../assets/icons/menu3.svg";
 import menu4 from "../../assets/icons/menu4.svg";
 
-/** Created several Component for Icons */
+/** Created several Component for Menu Icons */
 
 export const Menu1 = () => {
   return (

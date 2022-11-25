@@ -1,6 +1,11 @@
 import React from "react";
 import VerticalMenu from "../menu/VerticalMenu.component";
 
+/**
+ * Sidebar component
+ * @component
+ * @returns {React.ReactElement}
+ */
 const Sidebar = () => {
   return (
     <div className="sidebar">

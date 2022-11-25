@@ -13,6 +13,7 @@ import {
  * @returns {React.ReactElement}
  */
 const AverageScoreChart = ({ averageScore }) => {
+  console.log("======averageScore", averageScore);
   return (
     <div className="average-score-chart">
       <h2 className="radial-chart__title">Score</h2>

@@ -1,4 +1,4 @@
-/** */
+/** Activity Model */
 export default class Activity {
   userId;
   sessions;
