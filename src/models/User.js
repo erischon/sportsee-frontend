@@ -1,18 +1,11 @@
 /** */
 export default class User {
-  userId;
-  firstName;
-  lastName;
-  age;
-  todayScore;
-  calorieCount;
-  proteinCount;
-  carbohydrateCount;
-  lipidCount;
-
   /**
-   *
-   * @param {*} data
+   * @param {Object} data
+   * @param {number} data.userId
+   * @param {{firstName: string, lastName: string, age: number}} data.userInfos
+   * @param {number} data.todayScore
+   * @param {{calorieCount: number, proteinCount: number, carbohydrateCount: number, lipidCount: number}} data.keyData
    */
   constructor(data) {
     this.userId = data.id;

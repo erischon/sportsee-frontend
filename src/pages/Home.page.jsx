@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <main className="home">
       <div className="home__container">
-        <h1>HOME</h1>
+        <h1>Page d'Accueil</h1>
       </div>
       <div className="home__links">
         <Link to="/dashboard/12" className="link">

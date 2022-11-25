@@ -1,11 +1,9 @@
 /** Activity Model */
 export default class Activity {
-  userId;
-  sessions;
-
   /**
-   *
-   * @param {*} data
+   * @param {Object} data
+   * @param {number} data.userId
+   * @param {Object[]} data.sessions
    */
   constructor(data) {
     this.userId = data.userId;
@@ -17,9 +15,9 @@ export default class Activity {
   }
 
   /**
-   *
-   * @param {*} date
-   * @returns
+   * Get the day of month
+   * @param {string} date
+   * @returns {number}
    */
   getDay = (date) => {
     const dateObj = new Date(date);

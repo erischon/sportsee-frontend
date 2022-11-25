@@ -1,10 +1,11 @@
-/** */
+/** Performance Model */
 export default class Performance {
-  userId;
-  kind;
-  data;
-
-  /** */
+  /**
+   * @param {Object} data
+   * @param {number} data.userId
+   * @param {{1: string, 2: string, 3: string, 4: string, 5: string, 6: string }} data.kind
+   * @param {{value: number, kind: number}[]} data.data
+   */
   constructor(data) {
     this.userId = data.userId;
     this.kind = data.kind;
