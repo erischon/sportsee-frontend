@@ -8,7 +8,7 @@ import Performance from "../models/Performance";
 const API_URL = "http://localhost:3000";
 
 /**
- *
+ * Get the user data from the API
  * @param {number} userId
  * @returns {Object}
  */
@@ -25,7 +25,7 @@ const getUserMainData = async (userId) => {
 };
 
 /**
- *
+ * Get the user activity data from the API
  * @param {number} userId
  * @returns {Object}
  */
@@ -41,7 +41,7 @@ const getUserActivity = async (userId) => {
 };
 
 /**
- *
+ * Get the user average sessions from the API
  * @param {*} userId
  * @returns {Object}
  */
@@ -59,7 +59,7 @@ const getUserAverageSessions = async (userId) => {
 };
 
 /**
- *
+ * Get the user performance from the API
  * @param {*} userId
  * @returns {Object}
  */

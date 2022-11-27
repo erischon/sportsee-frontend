@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Display Home Page
+ * @component
+ * @returns {React.ReactElement}
+ */
 const HomePage = () => {
   return (
     <main className="home">

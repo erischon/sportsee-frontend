@@ -6,8 +6,8 @@ import {
 } from "./services.dev";
 
 /**
- *
- * @param {*} userId
+ * Get the data for user dashboard sections in dev mode
+ * @param {number} userId
  * @returns
  */
 const fetchDashboardDataDev = (userId) => {

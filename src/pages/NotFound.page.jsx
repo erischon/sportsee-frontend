@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Display 404 Page
+ * @component
+ * @returns {React.ReactElement}
+ */
 const NotFoundPage = () => {
   return (
     <main className="not-found">

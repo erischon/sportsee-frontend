@@ -6,8 +6,8 @@ import {
 } from "./services.prod";
 
 /**
- *
- * @param {*} userId
+ * Get the data for user dashboard sections in production mode
+ * @param {number} userId
  * @returns
  */
 const fetchDashboardDataProd = async (userId) => {
