@@ -12,7 +12,7 @@ import Performance from "../models/Performance";
 
 /**
  * Get the user data from Mocked Data
- * @param {*} userId
+ * @param {number} userId
  * @returns {Object}
  */
 const getUserMainData = (userId) => {
@@ -38,7 +38,7 @@ const getUserActivity = (userId) => {
 
 /**
  * Get the user average sessions data from Mocked Data
- * @param {*} userId
+ * @param {number} userId
  * @returns {Object}
  */
 const getUserAverageSessions = (userId) => {
@@ -53,7 +53,7 @@ const getUserAverageSessions = (userId) => {
 
 /**
  * Get the user performance data from Mocked Data
- * @param {*} userId
+ * @param {number} userId
  * @returns {Object}
  */
 const getUserPerformance = (userId) => {

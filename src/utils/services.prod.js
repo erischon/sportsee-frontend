@@ -42,7 +42,7 @@ const getUserActivity = async (userId) => {
 
 /**
  * Get the user average sessions from the API
- * @param {*} userId
+ * @param {number} userId
  * @returns {Object}
  */
 const getUserAverageSessions = async (userId) => {
@@ -60,7 +60,7 @@ const getUserAverageSessions = async (userId) => {
 
 /**
  * Get the user performance from the API
- * @param {*} userId
+ * @param {number} userId
  * @returns {Object}
  */
 const getUserPerformance = async (userId) => {
