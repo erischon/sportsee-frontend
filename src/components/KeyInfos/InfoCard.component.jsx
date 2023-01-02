@@ -15,7 +15,7 @@ const InfoCard = ({ infos, children }) => {
 
   return (
     <article className="info-card">
-      {<LogoCard color={color}>{children}</LogoCard>}
+      <LogoCard color={color}>{children}</LogoCard>
 
       <div>
         <h2 className="info-card__value">{`${valueConversion}${symbol}`}</h2>
