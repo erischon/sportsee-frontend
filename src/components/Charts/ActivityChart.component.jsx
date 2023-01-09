@@ -13,7 +13,7 @@ import {
  * Component who display Activity Chart
  * @component
  * @param {Object} props
- * @param {{day: number, kilogram: number, calories: number}[]} props.sessions
+ * @param {{day: number, kilogram: number, calories: number}} props.sessions
  * @returns {React.ReactElement}
  */
 const ActivityChart = ({ sessions }) => {

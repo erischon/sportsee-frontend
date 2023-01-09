@@ -8,7 +8,7 @@ import {
 /**
  * Get the data for user dashboard sections in dev mode
  * @param {number} userId
- * @returns
+ * @returns {Object}
  */
 const fetchDashboardDataDev = (userId) => {
   // Verify if user exist

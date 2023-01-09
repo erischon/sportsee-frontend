@@ -8,7 +8,7 @@ import {
 /**
  * Get the data for user dashboard sections in production mode
  * @param {number} userId
- * @returns
+ * @returns {Object}
  */
 const fetchDashboardDataProd = async (userId) => {
   let userMainData = null;

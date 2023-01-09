@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Dashboard.page.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Dashboard.page.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useState, useEffect } from "react";
+import { useParams, Navigate } from "react-router-dom";
+
+import ActivityChart from "../components/Charts/ActivityChart.component";
+import ActivityTypeChart from "../components/Charts/ActivityTypeChart.component";
+import AverageScoreChart from "../components/Charts/AverageScoreChart.component";
+import AverageSessionsChart from "../components/Charts/AverageSessionsChart.component";
+import KeyInfos from "../components/KeyInfos/KeyInfos.component";
+
+import fetchDashboardDataDev from "../utils/fetchDashboardData.dev";
+import FetchDashboardDataProd from "../utils/FetchDashboardData.prod";
+
+/**
+ * Display Dashboard Page
+ * @component
+ * @returns {React.ReactElement}
+ */
+const Dashboard = () => {
+  const params = useParams();
+  const userId = parseInt(params.id);
+  const mode = process.env.REACT_APP_MODE;
+
+  const [userExist, setUserExist] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [mainData, setMainData] = useState();
+  const [averageScore, setAverageScore] = useState();
+  const [activitySessions, setActivitySessions] = useState();
+  const [averageSessions, setAverageSessions] = useState();
+  const [activityType, setActivityType] = useState();
+
+  /**
+   *
+   */
+  useEffect(() => {
+    if (mode === "development") {
+      const userMainData = fetchDashboardDataDev(userId);
+      setLoading(true);
+
+      userMainData ? setUserExist(true) : setUserExist(false);
+
+      if (userExist) {
+        const {
+          userMainData,
+          userAverageScore,
+          userActivitySessions,
+          userAverageSessions,
+          userActivityType,
+        } = fetchDashboardDataDev(userId);
+
+        setMainData(userMainData);
+        setAverageScore(userAverageScore);
+        setActivitySessions(userActivitySessions);
+        setAverageSessions(userAverageSessions);
+        setActivityType(userActivityType);
+      }
+    }
+
+    if (mode === "production") {
+      // const userMainData = null;
+
+      FetchDashboardDataProd(userId)
+        .then((data) => {
+          setLoading(true);
+          data ? setUserExist(true) : setUserExist(false);
+
+          if (userExist) {
+            const {
+              userMainData,
+              userAverageScore,
+              userActivitySessions,
+              userAverageSessions,
+              userActivityType,
+            } = data;
+
+            setMainData(userMainData);
+            setAverageScore(userAverageScore);
+            setActivitySessions(userActivitySessions);
+            setAverageSessions(userAverageSessions);
+            setActivityType(userActivityType);
+          }
+        })
+        .catch((err) => {
+          console.log("======ERROR", err);
+        });
+    }
+  }, [userId, mode, userExist]);
+
+  if (loading &amp;&amp; !userExist) {
+    return &lt;Navigate to="/404" replace />;
+  }
+
+  return (
+    &lt;main className="dashboard">
+      &lt;section className="infos">
+        &lt;h1>Bonjour {mainData?.firstName}&lt;/h1>
+        &lt;p>Félicitation ! Vous avez explosé vos objectifs hier 👏&lt;/p>
+      &lt;/section>
+
+      &lt;section className="charts">
+        &lt;div className="container-left">
+          &lt;div className="top">
+            {activitySessions ? (
+              &lt;ActivityChart sessions={activitySessions} />
+            ) : (
+              &lt;p>Désolé, il n'y a aucune données&lt;/p>
+            )}
+          &lt;/div>
+
+          &lt;div className="bottom">
+            {averageSessions ? (
+              &lt;AverageSessionsChart sessions={averageSessions} />
+            ) : (
+              &lt;p>Désolé, il n'y a aucune données&lt;/p>
+            )}
+
+            {activityType ? (
+              &lt;ActivityTypeChart performance={activityType} />
+            ) : (
+              &lt;p>Désolé, il n'y a aucune données&lt;/p>
+            )}
+
+            {averageScore ? (
+              &lt;AverageScoreChart averageScore={averageScore} />
+            ) : (
+              &lt;p>Désolé, il n'y a aucune données&lt;/p>
+            )}
+          &lt;/div>
+        &lt;/div>
+
+        &lt;div className="container-right">
+          {mainData ? (
+            &lt;KeyInfos userMainData={mainData} />
+          ) : (
+            &lt;p>Désolé, il n'y a aucune données&lt;/p>
+          )}
+        &lt;/div>
+      &lt;/section>
+    &lt;/main>
+  );
+};
+
+export default Dashboard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ActivityChart.html">ActivityChart</a></li><li><a href="ActivityTypeChart.html">ActivityTypeChart</a></li><li><a href="AverageScoreChart.html">AverageScoreChart</a></li><li><a href="AverageSessionsChart.html">AverageSessionsChart</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="HomePage.html">HomePage</a></li><li><a href="InfoCard.html">InfoCard</a></li><li><a href="KeyInfos.html">KeyInfos</a></li><li><a href="LogoCard.html">LogoCard</a></li><li><a href="MenuCard.html">MenuCard</a></li><li><a href="NotFoundPage.html">NotFoundPage</a></li><li><a href="Sidebar.html">Sidebar</a></li><li><a href="VerticalMenu.html">VerticalMenu</a></li><li><a href="header.html">header</a></li><li><a href="layout.html">layout</a></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#fetchDashboardDataDev">fetchDashboardDataDev</a></li><li><a href="global.html#fetchDashboardDataProd">fetchDashboardDataProd</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Mon Jan 09 2023 07:49:09 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
