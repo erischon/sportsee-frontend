@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /**
  * Component who create Logo Card
  * @component
@@ -15,3 +17,8 @@ const LogoCard = ({ color, children }) => {
 };
 
 export default LogoCard;
+
+LogoCard.propTypes = {
+  color: PropTypes.string,
+  children: PropTypes.element,
+};

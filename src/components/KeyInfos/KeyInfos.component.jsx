@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import InfoCard from "./InfoCard.component";
 import { EnergyIcon, ProteinesIcon, GlucidesIcon, LipidesIcon } from "./Icons";
 
@@ -59,3 +61,13 @@ const KeyInfos = ({ userMainData }) => {
 };
 
 export default KeyInfos;
+
+KeyInfos.propTypes = {
+  userMainData: PropTypes.PropTypes.shape({
+    lipidCount: PropTypes.number,
+    proteinCount: PropTypes.number,
+    calorieCount: PropTypes.number,
+    carbohydrateCount: PropTypes.number,
+  }),
+  children: PropTypes.element,
+};

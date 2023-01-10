@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import LogoCard from "./LogoCard.component";
 
 /**
@@ -26,3 +28,13 @@ const InfoCard = ({ infos, children }) => {
 };
 
 export default InfoCard;
+
+InfoCard.propTypes = {
+  infos: PropTypes.PropTypes.shape({
+    color: PropTypes.string,
+    symbol: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.number,
+  }),
+  children: PropTypes.element,
+};

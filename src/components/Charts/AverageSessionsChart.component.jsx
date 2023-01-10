@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import {
   LineChart,
   Line,
@@ -10,7 +12,7 @@ import {
 /**
  * Component who display Average Sessions Chart
  * @component
- * @param {Object} props
+ * @param {Object[]} props
  * @param {{day: string, sessionLength: number}} props.sessions
  * @returns {React.ReactElement}
  */
@@ -58,3 +60,12 @@ const AverageSessionsChart = ({ sessions }) => {
 };
 
 export default AverageSessionsChart;
+
+AverageSessionsChart.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string,
+      sessionLength: PropTypes.number,
+    })
+  ),
+};

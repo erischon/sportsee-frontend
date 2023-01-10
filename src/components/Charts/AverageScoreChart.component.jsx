@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import {
   RadialBarChart,
   RadialBar,
@@ -8,12 +10,11 @@ import {
 /**
  * Component who display Average Score Chart
  * @component
- * @param {Object} props
+ * @param {Object[]} props
  * @param {{score: number}} props.averageScore
  * @returns {React.ReactElement}
  */
 const AverageScoreChart = ({ averageScore }) => {
-  console.log("======averageScore", averageScore);
   return (
     <div className="average-score-chart">
       <h2 className="radial-chart__title">Score</h2>
@@ -52,3 +53,11 @@ const AverageScoreChart = ({ averageScore }) => {
 };
 
 export default AverageScoreChart;
+
+AverageScoreChart.propTypes = {
+  averageScore: PropTypes.arrayOf(
+    PropTypes.shape({
+      score: PropTypes.number,
+    })
+  ),
+};

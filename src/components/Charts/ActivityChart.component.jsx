@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import {
   BarChart,
   Bar,
@@ -12,7 +14,7 @@ import {
 /**
  * Component who display Activity Chart
  * @component
- * @param {Object} props
+ * @param {Object[]} props
  * @param {{day: number, kilogram: number, calories: number}} props.sessions
  * @returns {React.ReactElement}
  */
@@ -92,3 +94,13 @@ const ActivityChart = ({ sessions }) => {
 };
 
 export default ActivityChart;
+
+ActivityChart.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number,
+      kilogram: PropTypes.number,
+      calories: PropTypes.number,
+    })
+  ),
+};
