@@ -5,7 +5,7 @@ import Activity from "../models/Activity";
 import AverageSessions from "../models/AverageSessions";
 import Performance from "../models/Performance";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://backend-sportsee.herokuapp.com";
 
 /**
  * Get the user data from the API
